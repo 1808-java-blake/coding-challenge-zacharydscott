@@ -17,8 +17,52 @@ stick lengths     length of cut     sticks before cut
 - - - - - 3         3                 1
 - - - - - -         done              done
 */
-function solution(arr){
-  // TODO: Create the solution
-}
+function solution(arr) {
+  if (typeof arr !== "object") {
+    return [];
+  } else {
+    try {
+      if (!arr[0]) {
+        return [];
+      }
+    } catch (err) {
+      return [];
+    }
+  }
+  let isEmpty = false;
+  let numSticks = 0;
+  let min;
+  let returnArr = [arr.length];
+  let newArr = [];
+  while (isEmpty === false) {
+    min = Math.max(...arr);
+    arr.forEach(element => {
+      if (element < min && element !== null) {
+        min = element;
+      }
+    });
 
+    console.log(min);
+    arr.forEach(element => {
+      if (element !== null && element > min) {
+        numSticks++;
+        newArr.push(element - min);
+      } else {
+        newArr.push((element = null));
+      }
+    });
+    if (numSticks === 0) {
+      isEmpty = true;
+    } else {
+      returnArr.push(numSticks);
+      numSticks = 0;
+    }
+    console.log(newArr);
+    arr = newArr;
+    newArr = [];
+  }
+
+  return returnArr;
+}
+console.log(solution([5, 10, 15, 20, 30, 100]));
 module.exports = solution;
