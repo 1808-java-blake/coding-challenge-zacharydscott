@@ -1,0 +1,23 @@
+{
+  "name": "coding-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "multiples-3-5.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/btkruppa/coding-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/btkruppa/coding-challenge/issues"
+  },
+  "homepage": "https://github.com/btkruppa/coding-challenge#readme",
+  "dependencies": {
+    "jest": "^23.5.0"
+  }
+}
